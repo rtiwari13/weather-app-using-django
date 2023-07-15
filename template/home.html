@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      body{
+        color:beige;
+      }
+      #city{
+        border:none;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        padding:10px;
+        font-size: large;
+        box-shadow: 10px 10px 10px;
+        border-radius:8px;
+        margin-top: 15vh;
+      }
+      #btn{
+        border:none;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        padding:10px;
+        font-size: large;
+        box-shadow: 10px 10px 10px;
+        border-radius:8px;
+        margin-top: 15vh;
+      }
+      #heading{
+            background-color: rgb(13, 15, 13);
+            height: 70px;
+            padding:  20px 0 0 0 ;
+      }
+      .maincls{
+        background: url("https://images.pexels.com/photos/3801516/pexels-photo-3801516.jpeg?auto=compress&cs=tinysrgb&w=600");
+        background-size: 100%;
+        width:70%; 
+        height: 600px;
+      }
+    </style>
+</head>
+<body style="background-color: rgb(62, 64, 65);">
+    <center>
+       <div class="maincls">
+      <h1 id = "heading">Weather App</h1>
+      <form action="/" method="post">
+        {% csrf_token %}
+       <input type="text" name="cityName" id="city" placeholder="Enter City name">
+       <button id="btn">Search </button>
+      </form>
+      
+      <div class="container">
+        <h1>{{data.name}}</h1>
+        <h1>Temperature - {{data.main.temp}}</h1>
+        <h3>{{data.description}}</h3>
+      </div>
+      </div>
+ </center>
+</body>
+</html>
